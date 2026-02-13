@@ -1,3 +1,74 @@
+import AVFoundation
+
+struct CameraPreview: UIViewControllerRepresentable {
+    class CameraPreviewController: UIViewController {
+        var captureSession: AVCaptureSession?
+        var previewLayer: AVCaptureVideoPreviewLayer?
+
+        override func viewDidLoad() {
+            super.viewDidLoad()
+            let session = AVCaptureSession()
+            session.sessionPreset = .photo
+            guard let device = AVCaptureDevice.default(.builtInWideAngleCamera, for: .video, position: .back),
+                  let input = try? AVCaptureDeviceInput(device: device) else { return }
+            if session.canAddInput(input) { session.addInput(input) }
+            let preview = AVCaptureVideoPreviewLayer(session: session)
+            preview.videoGravity = .resizeAspectFill
+            preview.frame = view.bounds
+            view.layer.addSublayer(preview)
+            self.captureSession = session
+            self.previewLayer = preview
+            session.startRunning()
+        }
+
+        override func viewDidLayoutSubviews() {
+            super.viewDidLayoutSubviews()
+            previewLayer?.frame = view.bounds
+        }
+    }
+
+    func makeUIViewController(context: Context) -> CameraPreviewController {
+        CameraPreviewController()
+    }
+
+    func updateUIViewController(_ uiViewController: CameraPreviewController, context: Context) {}
+}
+import AVFoundation
+
+struct CameraPreview: UIViewControllerRepresentable {
+    class CameraPreviewController: UIViewController {
+        var captureSession: AVCaptureSession?
+        var previewLayer: AVCaptureVideoPreviewLayer?
+
+        override func viewDidLoad() {
+            super.viewDidLoad()
+            let session = AVCaptureSession()
+            session.sessionPreset = .photo
+            guard let device = AVCaptureDevice.default(.builtInWideAngleCamera, for: .video, position: .back),
+                  let input = try? AVCaptureDeviceInput(device: device) else { return }
+            if session.canAddInput(input) { session.addInput(input) }
+            let preview = AVCaptureVideoPreviewLayer(session: session)
+            preview.videoGravity = .resizeAspectFill
+            preview.frame = view.bounds
+            view.layer.addSublayer(preview)
+            self.captureSession = session
+            self.previewLayer = preview
+            session.startRunning()
+        }
+
+        override func viewDidLayoutSubviews() {
+            super.viewDidLayoutSubviews()
+            previewLayer?.frame = view.bounds
+        }
+    }
+
+    func makeUIViewController(context: Context) -> CameraPreviewController {
+        CameraPreviewController()
+    }
+
+    func updateUIViewController(_ uiViewController: CameraPreviewController, context: Context) {}
+}
+
 
 import SwiftUI
 import SceneKit
@@ -116,8 +187,7 @@ struct CameraView: View {
                 GeometryReader { geo in
                     let width = geo.size.width - 10
                     let height = width * 4 / 3 + 70
-                    Rectangle()
-                        .fill(Color.white)
+                    CameraPreview()
                         .cornerRadius(18)
                         .frame(width: width, height: height)
                         .position(x: geo.size.width/2, y: height/2)
