@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<!-- PERMESSI NECESSARI PER LIDAR SCANNING -->
+	
+	<!-- Camera Permission -->
+	<key>NSCameraUsageDescription</key>
+	<string>La fotocamera viene utilizzata per visualizzare l'anteprima durante la scansione LiDAR della stanza.</string>
+	
+	<!-- Location Permission (opzionale ma consigliato per RoomPlan) -->
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>La posizione viene utilizzata per migliorare l'accuratezza della scansione 3D.</string>
+	
+	<!-- Motion Sensors Permission -->
+	<key>NSMotionUsageDescription</key>
+	<string>I sensori di movimento vengono utilizzati per tracciare i movimenti durante la scansione LiDAR.</string>
+	
+	<!-- ARKit Configuration -->
+	<key>UIRequiredDeviceCapabilities</key>
+	<array>
+		<string>arkit</string>
+	</array>
+	
+	<!-- Supported Interface Orientations -->
+	<key>UISupportedInterfaceOrientations</key>
+	<array>
+		<string>UIInterfaceOrientationPortrait</string>
+		<string>UIInterfaceOrientationLandscapeLeft</string>
+		<string>UIInterfaceOrientationLandscapeRight</string>
+	</array>
+</dict>
+</plist>

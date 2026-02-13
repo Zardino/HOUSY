@@ -1,14 +1,15 @@
 import Foundation
+import SceneKit
+import SwiftUI
+import RoomPlan
+
 // Modello Project
 struct Project: Identifiable, Codable {
     let id: UUID
     let name: String
     let date: Date
-    // Per ora salviamo solo il nome, puoi aggiungere altro (es: filePath, thumbnail, ecc)
+    let modelPath: String? // Path del file USDZ salvato
 }
-import SceneKit
-import Foundation
-import SwiftUI
 
 /// Enum che rappresenta lo stato della scansione
 public enum ScanState {
@@ -19,27 +20,62 @@ public enum ScanState {
 class LidarLogic: ObservableObject {
     // Array di progetti salvati
     @Published var savedProjects: [Project] = []
+    
+    // RoomPlan Manager per scansione LiDAR reale
+    @Published var roomPlanManager: RoomPlanManager?
+    
     // Preview 3D Scene
     @Published var previewScene: SCNScene = {
-        // Prova a caricare un modello 3D di esempio dal bundle (model.usdz)
-        if let url = Bundle.main.url(forResource: "model", withExtension: "usdz") {
-            return try! SCNScene(url: url, options: nil)
-        } else {
-            // Fallback: scena vuota con un box
-            let scene = SCNScene()
-            let box = SCNBox(width: 0.1, height: 0.1, length: 0.1, chamferRadius: 0)
-            let node = SCNNode(geometry: box)
-            scene.rootNode.addChildNode(node)
-            return scene
-        }
+        // Fallback: scena vuota con un box
+        let scene = SCNScene()
+        let box = SCNBox(width: 0.1, height: 0.1, length: 0.1, chamferRadius: 0)
+        let node = SCNNode(geometry: box)
+        scene.rootNode.addChildNode(node)
+        return scene
     }()
+    
+    init() {
+        if #available(iOS 16.0, *) {
+            self.roomPlanManager = RoomPlanManager()
+        }
+    }
 
     // Azione Salva
     func saveScan() {
-        // Crea un nuovo progetto e aggiungilo all'array
-        let newProject = Project(id: UUID(), name: "Progetto del \(DateFormatter.localizedString(from: Date(), dateStyle: .short, timeStyle: .short))", date: Date())
-        savedProjects.append(newProject)
-        print("Progetto salvato: \(newProject.name)")
+        guard #available(iOS 16.0, *), let manager = roomPlanManager else {
+            print("❌ RoomPlan non disponibile")
+            return
+        }
+        
+        let projectName = "Scan_\(DateFormatter.localizedString(from: Date(), dateStyle: .short, timeStyle: .short))"
+        
+        // Salva il modello 3D
+        if let modelURL = manager.saveModel(name: projectName) {
+            let newProject = Project(
+                id: UUID(),
+                name: projectName,
+                date: Date(),
+                modelPath: modelURL.path
+            )
+            savedProjects.append(newProject)
+            
+            // Carica il modello nella preview scene
+            if let scene = try? SCNScene(url: modelURL, options: nil) {
+                self.previewScene = scene
+            }
+            
+            print("✅ Progetto salvato: \(newProject.name)")
+        } else {
+            // Fallback: salva senza modello
+            let newProject = Project(
+                id: UUID(),
+                name: projectName,
+                date: Date(),
+                modelPath: nil
+            )
+            savedProjects.append(newProject)
+            print("⚠️ Progetto salvato senza modello 3D")
+        }
     }
 
     // Azione Rifai
@@ -56,8 +92,14 @@ class LidarLogic: ObservableObject {
     // Chiamata quando l'utente vuole terminare la scansione
     func stopScanSession() {
         scanState = .finishing
+        
+        // Ferma RoomPlan
+        if #available(iOS 16.0, *) {
+            roomPlanManager?.stopScanning()
+        }
+        
         // Simula elaborazione finale
-        DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
             self.scanState = .completed
         }
     }
@@ -70,17 +112,23 @@ class LidarLogic: ObservableObject {
     
     // MARK: - Controlli automatici
     func checkPreconditions() -> Bool {
-        // TODO: Controlla se il dispositivo ha LiDAR, luce sufficiente, spazio valido
-        // Restituisci true se tutto ok, false altrimenti
-        return true
+        if #available(iOS 16.0, *) {
+            return RoomCaptureSession.isSupported
+        }
+        return false
     }
     
     // MARK: - Avvio sessione
     func startScanSession() {
-        // TODO: Avvia ARSession e RoomCaptureSession
         scanState = .preparing
-        // Simula preparazione, poi passa a scanning
-        DispatchQueue.main.asyncAfter(deadline: .now() + 1.2) {
+        
+        // Avvia RoomPlan se disponibile
+        if #available(iOS 16.0, *) {
+            roomPlanManager?.startScanning()
+        }
+        
+        // Passa a scanning dopo preparazione
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
             self.scanState = .scanning
         }
     }

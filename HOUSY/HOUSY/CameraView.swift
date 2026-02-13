@@ -1,75 +1,3 @@
-import AVFoundation
-
-struct CameraPreview: UIViewControllerRepresentable {
-    class CameraPreviewController: UIViewController {
-        var captureSession: AVCaptureSession?
-        var previewLayer: AVCaptureVideoPreviewLayer?
-
-        override func viewDidLoad() {
-            super.viewDidLoad()
-            let session = AVCaptureSession()
-            session.sessionPreset = .photo
-            guard let device = AVCaptureDevice.default(.builtInWideAngleCamera, for: .video, position: .back),
-                  let input = try? AVCaptureDeviceInput(device: device) else { return }
-            if session.canAddInput(input) { session.addInput(input) }
-            let preview = AVCaptureVideoPreviewLayer(session: session)
-            preview.videoGravity = .resizeAspectFill
-            preview.frame = view.bounds
-            view.layer.addSublayer(preview)
-            self.captureSession = session
-            self.previewLayer = preview
-            session.startRunning()
-        }
-
-        override func viewDidLayoutSubviews() {
-            super.viewDidLayoutSubviews()
-            previewLayer?.frame = view.bounds
-        }
-    }
-
-    func makeUIViewController(context: Context) -> CameraPreviewController {
-        CameraPreviewController()
-    }
-
-    func updateUIViewController(_ uiViewController: CameraPreviewController, context: Context) {}
-}
-import AVFoundation
-
-struct CameraPreview: UIViewControllerRepresentable {
-    class CameraPreviewController: UIViewController {
-        var captureSession: AVCaptureSession?
-        var previewLayer: AVCaptureVideoPreviewLayer?
-
-        override func viewDidLoad() {
-            super.viewDidLoad()
-            let session = AVCaptureSession()
-            session.sessionPreset = .photo
-            guard let device = AVCaptureDevice.default(.builtInWideAngleCamera, for: .video, position: .back),
-                  let input = try? AVCaptureDeviceInput(device: device) else { return }
-            if session.canAddInput(input) { session.addInput(input) }
-            let preview = AVCaptureVideoPreviewLayer(session: session)
-            preview.videoGravity = .resizeAspectFill
-            preview.frame = view.bounds
-            view.layer.addSublayer(preview)
-            self.captureSession = session
-            self.previewLayer = preview
-            session.startRunning()
-        }
-
-        override func viewDidLayoutSubviews() {
-            super.viewDidLayoutSubviews()
-            previewLayer?.frame = view.bounds
-        }
-    }
-
-    func makeUIViewController(context: Context) -> CameraPreviewController {
-        CameraPreviewController()
-    }
-
-    func updateUIViewController(_ uiViewController: CameraPreviewController, context: Context) {}
-}
-
-
 import SwiftUI
 import SceneKit
 import UIKit
@@ -79,6 +7,7 @@ struct CameraView: View {
     @Environment(\.presentationMode) var presentationMode
     @State private var isScanning = false
     @StateObject private var lidarLogic = LidarLogic()
+    @StateObject private var cameraManager = CameraManager()
 
     // Simulazione qualità progetto (0.0 = rosso, 1.0 = verde)
     @State private var projectQuality: Double = 0.2
@@ -187,12 +116,18 @@ struct CameraView: View {
                 GeometryReader { geo in
                     let width = geo.size.width - 10
                     let height = width * 4 / 3 + 70
-                    CameraPreview()
+                    CameraPreview(manager: cameraManager)
                         .cornerRadius(18)
                         .frame(width: width, height: height)
                         .position(x: geo.size.width/2, y: height/2)
                 }
                 .frame(height: UIScreen.main.bounds.width * 4 / 3 + 70)
+                .onAppear {
+                    cameraManager.requestAndStart()
+                }
+                .onDisappear {
+                    cameraManager.stop()
+                }
                 Spacer(minLength: 0)
 
                 Spacer()
@@ -247,6 +182,12 @@ struct CameraView: View {
 
             // Overlay stato scanning
             if lidarLogic.scanState == .scanning {
+                // Overlay mesh 3D RoomPlan in tempo reale
+                if #available(iOS 16.0, *), let manager = lidarLogic.roomPlanManager {
+                    ARMeshView(roomPlanManager: manager)
+                        .ignoresSafeArea()
+                }
+                
                 VStack {
                     Spacer()
                     Text("SCANSIONE ATTIVA")
@@ -254,14 +195,14 @@ struct CameraView: View {
                         .font(.title2)
                         .bold()
                         .padding(.bottom, 12)
-                    // Qui puoi aggiungere overlay mesh, hint dinamici, ecc.
+                    // Hint per l'utente
                     Text("Inquadra il pavimento e muoviti lentamente…")
                         .foregroundColor(.white)
                         .font(.subheadline)
                         .padding(.bottom, 24)
                     Spacer()
                 }
-                .background(Color.black.opacity(0.2).ignoresSafeArea())
+                .background(Color.clear)
                 .transition(.opacity)
                 // Simulazione: aggiorna la qualità in modo fluido
                 .onAppear {
