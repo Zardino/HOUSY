@@ -96,7 +96,8 @@ enum ScanState {
 ### Mesh 3D in Tempo Reale
 - `RoomPlanManager` riceve aggiornamenti da `RoomCaptureSessionDelegate`
 - Metodo `didUpdate room:` estrae geometria pareti/superfici
-- `ARMeshView` visualizza automaticamente via `RoomCaptureView` di RoomPlan
+- `ARMeshView` usa `RoomCaptureView` di RoomPlan che gestisce automaticamente la visualizzazione della mesh
+- `RoomCaptureView` si collega automaticamente alla sessione RoomPlan attiva del sistema
 
 ### Salvataggio Modelli
 - RoomPlan esporta automaticamente in formato USDZ

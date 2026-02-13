@@ -7,19 +7,11 @@ struct ARMeshView: UIViewRepresentable {
     
     func makeUIView(context: Context) -> RoomCaptureView {
         let captureView = RoomCaptureView(frame: .zero)
-        
-        // Collega la vista alla sessione di cattura
-        if let session = roomPlanManager.captureSession {
-            captureView.captureSession = session
-        }
-        
         return captureView
     }
     
     func updateUIView(_ uiView: RoomCaptureView, context: Context) {
-        // Aggiorna la sessione se cambia
-        if let session = roomPlanManager.captureSession {
-            uiView.captureSession = session
-        }
+        // RoomCaptureView gestisce automaticamente la sessione
+        // Non serve assegnare captureSession manualmente
     }
 }

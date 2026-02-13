@@ -99,12 +99,6 @@ struct Project3DPreviewView: View {
         }
     }
 }
-            }
-            .padding()
-        }
-        .padding()
-    }
-}
 
 // Preview solo per SwiftUI Canvas
 //#Preview {

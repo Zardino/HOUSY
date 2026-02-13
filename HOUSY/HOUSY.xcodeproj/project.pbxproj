@@ -6,6 +6,10 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		0FCBD4B42F3FD4E300779302 /* RoomPlan.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0FCBD4B32F3FD4E300779302 /* RoomPlan.framework */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXContainerItemProxy section */
 		0FCBD4582F3DCA2600779302 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -27,11 +31,25 @@
 		0FCBD44A2F3DCA2000779302 /* HOUSY.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HOUSY.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0FCBD4572F3DCA2600779302 /* HOUSYTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HOUSYTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0FCBD4612F3DCA2700779302 /* HOUSYUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HOUSYUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		0FCBD4B32F3FD4E300779302 /* RoomPlan.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RoomPlan.framework; path = System/Library/Frameworks/RoomPlan.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		0FCBD4B12F3FD46F00779302 /* Exceptions for "HOUSY" folder in "HOUSY" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = 0FCBD4492F3DCA2000779302 /* HOUSY */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		0FCBD44C2F3DCA2000779302 /* HOUSY */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				0FCBD4B12F3FD46F00779302 /* Exceptions for "HOUSY" folder in "HOUSY" target */,
+			);
 			path = HOUSY;
 			sourceTree = "<group>";
 		};
@@ -52,6 +70,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0FCBD4B42F3FD4E300779302 /* RoomPlan.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -78,6 +97,7 @@
 				0FCBD44C2F3DCA2000779302 /* HOUSY */,
 				0FCBD45A2F3DCA2600779302 /* HOUSYTests */,
 				0FCBD4642F3DCA2700779302 /* HOUSYUITests */,
+				0FCBD4B22F3FD4E200779302 /* Frameworks */,
 				0FCBD44B2F3DCA2000779302 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -90,6 +110,14 @@
 				0FCBD4612F3DCA2700779302 /* HOUSYUITests.xctest */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		0FCBD4B22F3FD4E200779302 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0FCBD4B32F3FD4E300779302 /* RoomPlan.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -400,7 +428,10 @@
 				DEVELOPMENT_TEAM = K27XMU63R2;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = HOUSY/Info.plist;
 				INFOPLIST_KEY_NSCameraUsageDescription = "";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "";
+				INFOPLIST_KEY_NSMotionUsageDescription = "";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UIRequiredDeviceCapabilities = arkit;
@@ -430,7 +461,10 @@
 				DEVELOPMENT_TEAM = K27XMU63R2;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = HOUSY/Info.plist;
 				INFOPLIST_KEY_NSCameraUsageDescription = "";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "";
+				INFOPLIST_KEY_NSMotionUsageDescription = "";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UIRequiredDeviceCapabilities = arkit;
