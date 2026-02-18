@@ -1,0 +1,640 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0F6317C52F40F12800ACCD36 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 0F6317C42F40F12800ACCD36 /* FirebaseAnalytics */; };
+		0F6317C72F40F12800ACCD36 /* FirebaseCrashlytics in Frameworks */ = {isa = PBXBuildFile; productRef = 0F6317C62F40F12800ACCD36 /* FirebaseCrashlytics */; };
+		0F6317C92F40F12800ACCD36 /* FirebasePerformance in Frameworks */ = {isa = PBXBuildFile; productRef = 0F6317C82F40F12800ACCD36 /* FirebasePerformance */; };
+		0FCBD4B42F3FD4E300779302 /* RoomPlan.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0FCBD4B32F3FD4E300779302 /* RoomPlan.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		0FCBD4582F3DCA2600779302 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0FCBD4422F3DCA2000779302 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 0FCBD4492F3DCA2000779302;
+			remoteInfo = HOUSY;
+		};
+		0FCBD4622F3DCA2700779302 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0FCBD4422F3DCA2000779302 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 0FCBD4492F3DCA2000779302;
+			remoteInfo = HOUSY;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		0FCBD44A2F3DCA2000779302 /* HOUSY.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HOUSY.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		0FCBD4572F3DCA2600779302 /* HOUSYTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HOUSYTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		0FCBD4612F3DCA2700779302 /* HOUSYUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HOUSYUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		0FCBD4B32F3FD4E300779302 /* RoomPlan.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RoomPlan.framework; path = System/Library/Frameworks/RoomPlan.framework; sourceTree = SDKROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		0FCBD4B12F3FD46F00779302 /* Exceptions for "HOUSY" folder in "HOUSY" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = 0FCBD4492F3DCA2000779302 /* HOUSY */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		0FCBD44C2F3DCA2000779302 /* HOUSY */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				0FCBD4B12F3FD46F00779302 /* Exceptions for "HOUSY" folder in "HOUSY" target */,
+			);
+			path = HOUSY;
+			sourceTree = "<group>";
+		};
+		0FCBD45A2F3DCA2600779302 /* HOUSYTests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = HOUSYTests;
+			sourceTree = "<group>";
+		};
+		0FCBD4642F3DCA2700779302 /* HOUSYUITests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = HOUSYUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXFileSystemSynchronizedRootGroup section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		0FCBD4472F3DCA2000779302 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0F6317C72F40F12800ACCD36 /* FirebaseCrashlytics in Frameworks */,
+				0F6317C52F40F12800ACCD36 /* FirebaseAnalytics in Frameworks */,
+				0F6317C92F40F12800ACCD36 /* FirebasePerformance in Frameworks */,
+				0FCBD4B42F3FD4E300779302 /* RoomPlan.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0FCBD4542F3DCA2600779302 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0FCBD45E2F3DCA2700779302 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		0FCBD4412F3DCA2000779302 = {
+			isa = PBXGroup;
+			children = (
+				0FCBD44C2F3DCA2000779302 /* HOUSY */,
+				0FCBD45A2F3DCA2600779302 /* HOUSYTests */,
+				0FCBD4642F3DCA2700779302 /* HOUSYUITests */,
+				0FCBD4B22F3FD4E200779302 /* Frameworks */,
+				0FCBD44B2F3DCA2000779302 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		0FCBD44B2F3DCA2000779302 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				0FCBD44A2F3DCA2000779302 /* HOUSY.app */,
+				0FCBD4572F3DCA2600779302 /* HOUSYTests.xctest */,
+				0FCBD4612F3DCA2700779302 /* HOUSYUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		0FCBD4B22F3FD4E200779302 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0FCBD4B32F3FD4E300779302 /* RoomPlan.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		0FCBD4492F3DCA2000779302 /* HOUSY */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0FCBD46B2F3DCA2700779302 /* Build configuration list for PBXNativeTarget "HOUSY" */;
+			buildPhases = (
+				0FCBD4462F3DCA2000779302 /* Sources */,
+				0FCBD4472F3DCA2000779302 /* Frameworks */,
+				0FCBD4482F3DCA2000779302 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				0FCBD44C2F3DCA2000779302 /* HOUSY */,
+			);
+			name = HOUSY;
+			packageProductDependencies = (
+				0F6317C42F40F12800ACCD36 /* FirebaseAnalytics */,
+				0F6317C62F40F12800ACCD36 /* FirebaseCrashlytics */,
+				0F6317C82F40F12800ACCD36 /* FirebasePerformance */,
+			);
+			productName = HOUSY;
+			productReference = 0FCBD44A2F3DCA2000779302 /* HOUSY.app */;
+			productType = "com.apple.product-type.application";
+		};
+		0FCBD4562F3DCA2600779302 /* HOUSYTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0FCBD46E2F3DCA2700779302 /* Build configuration list for PBXNativeTarget "HOUSYTests" */;
+			buildPhases = (
+				0FCBD4532F3DCA2600779302 /* Sources */,
+				0FCBD4542F3DCA2600779302 /* Frameworks */,
+				0FCBD4552F3DCA2600779302 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				0FCBD4592F3DCA2600779302 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				0FCBD45A2F3DCA2600779302 /* HOUSYTests */,
+			);
+			name = HOUSYTests;
+			packageProductDependencies = (
+			);
+			productName = HOUSYTests;
+			productReference = 0FCBD4572F3DCA2600779302 /* HOUSYTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		0FCBD4602F3DCA2700779302 /* HOUSYUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0FCBD4712F3DCA2700779302 /* Build configuration list for PBXNativeTarget "HOUSYUITests" */;
+			buildPhases = (
+				0FCBD45D2F3DCA2700779302 /* Sources */,
+				0FCBD45E2F3DCA2700779302 /* Frameworks */,
+				0FCBD45F2F3DCA2700779302 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				0FCBD4632F3DCA2700779302 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				0FCBD4642F3DCA2700779302 /* HOUSYUITests */,
+			);
+			name = HOUSYUITests;
+			packageProductDependencies = (
+			);
+			productName = HOUSYUITests;
+			productReference = 0FCBD4612F3DCA2700779302 /* HOUSYUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		0FCBD4422F3DCA2000779302 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1640;
+				LastUpgradeCheck = 1640;
+				TargetAttributes = {
+					0FCBD4492F3DCA2000779302 = {
+						CreatedOnToolsVersion = 16.4;
+					};
+					0FCBD4562F3DCA2600779302 = {
+						CreatedOnToolsVersion = 16.4;
+						TestTargetID = 0FCBD4492F3DCA2000779302;
+					};
+					0FCBD4602F3DCA2700779302 = {
+						CreatedOnToolsVersion = 16.4;
+						TestTargetID = 0FCBD4492F3DCA2000779302;
+					};
+				};
+			};
+			buildConfigurationList = 0FCBD4452F3DCA2000779302 /* Build configuration list for PBXProject "HOUSY" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 0FCBD4412F3DCA2000779302;
+			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				0F6317C32F40F12800ACCD36 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+			);
+			preferredProjectObjectVersion = 77;
+			productRefGroup = 0FCBD44B2F3DCA2000779302 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				0FCBD4492F3DCA2000779302 /* HOUSY */,
+				0FCBD4562F3DCA2600779302 /* HOUSYTests */,
+				0FCBD4602F3DCA2700779302 /* HOUSYUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		0FCBD4482F3DCA2000779302 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0FCBD4552F3DCA2600779302 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0FCBD45F2F3DCA2700779302 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		0FCBD4462F3DCA2000779302 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0FCBD4532F3DCA2600779302 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0FCBD45D2F3DCA2700779302 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		0FCBD4592F3DCA2600779302 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 0FCBD4492F3DCA2000779302 /* HOUSY */;
+			targetProxy = 0FCBD4582F3DCA2600779302 /* PBXContainerItemProxy */;
+		};
+		0FCBD4632F3DCA2700779302 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 0FCBD4492F3DCA2000779302 /* HOUSY */;
+			targetProxy = 0FCBD4622F3DCA2700779302 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		0FCBD4692F3DCA2700779302 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = K27XMU63R2;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.5;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		0FCBD46A2F3DCA2700779302 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = K27XMU63R2;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.5;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		0FCBD46C2F3DCA2700779302 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = K27XMU63R2;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSCameraUsageDescription = "";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "";
+				INFOPLIST_KEY_NSMotionUsageDescription = "";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UIRequiredDeviceCapabilities = arkit;
+				INFOPLIST_KEY_UIStatusBarHidden = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = it.lorenzzardi.HOUSY;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		0FCBD46D2F3DCA2700779302 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = K27XMU63R2;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSCameraUsageDescription = "";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "";
+				INFOPLIST_KEY_NSMotionUsageDescription = "";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UIRequiredDeviceCapabilities = arkit;
+				INFOPLIST_KEY_UIStatusBarHidden = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = it.lorenzzardi.HOUSY;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		0FCBD46F2F3DCA2700779302 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = K27XMU63R2;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = it.lorenzzardi.HOUSYTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/HOUSY.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/HOUSY";
+			};
+			name = Debug;
+		};
+		0FCBD4702F3DCA2700779302 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = K27XMU63R2;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = it.lorenzzardi.HOUSYTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/HOUSY.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/HOUSY";
+			};
+			name = Release;
+		};
+		0FCBD4722F3DCA2700779302 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = K27XMU63R2;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = it.lorenzzardi.HOUSYUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = HOUSY;
+			};
+			name = Debug;
+		};
+		0FCBD4732F3DCA2700779302 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = K27XMU63R2;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = it.lorenzzardi.HOUSYUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = HOUSY;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		0FCBD4452F3DCA2000779302 /* Build configuration list for PBXProject "HOUSY" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0FCBD4692F3DCA2700779302 /* Debug */,
+				0FCBD46A2F3DCA2700779302 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		0FCBD46B2F3DCA2700779302 /* Build configuration list for PBXNativeTarget "HOUSY" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0FCBD46C2F3DCA2700779302 /* Debug */,
+				0FCBD46D2F3DCA2700779302 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		0FCBD46E2F3DCA2700779302 /* Build configuration list for PBXNativeTarget "HOUSYTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0FCBD46F2F3DCA2700779302 /* Debug */,
+				0FCBD4702F3DCA2700779302 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		0FCBD4712F3DCA2700779302 /* Build configuration list for PBXNativeTarget "HOUSYUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0FCBD4722F3DCA2700779302 /* Debug */,
+				0FCBD4732F3DCA2700779302 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		0F6317C32F40F12800ACCD36 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 12.9.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		0F6317C42F40F12800ACCD36 /* FirebaseAnalytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 0F6317C32F40F12800ACCD36 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalytics;
+		};
+		0F6317C62F40F12800ACCD36 /* FirebaseCrashlytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 0F6317C32F40F12800ACCD36 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseCrashlytics;
+		};
+		0F6317C82F40F12800ACCD36 /* FirebasePerformance */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 0F6317C32F40F12800ACCD36 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebasePerformance;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = 0FCBD4422F3DCA2000779302 /* Project object */;
+}
